@@ -98,8 +98,8 @@ func NewClient(CommonParams CommonParams) *Client {
 	}
 
 	cli := http.Client{
-		Proxy: http.ProxyFromEnvironment,
 		Transport: &http.Transport{
+			Proxy: http.ProxyFromEnvironment,
 			Dial: (&net.Dialer{
 				Timeout:   time.Duration(_timeout) * time.Second,
 				KeepAlive: time.Duration(_keepalive) * time.Second,
